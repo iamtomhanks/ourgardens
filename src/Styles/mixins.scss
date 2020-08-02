@@ -1,0 +1,26 @@
+@import './variables';
+
+@mixin square-box-shadow {
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+@mixin scroll-bar {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+      background-color: transparentize(#333, .5);
+  }
+  &::-webkit-scrollbar-track {
+      background-color: $color-blue1;
+  }
+}
+
+@mixin dashboard-card {
+  background: $color-blue2;
+  border-radius: 4px;
+  box-sizing: border-box;
+  @include square-box-shadow();
+}

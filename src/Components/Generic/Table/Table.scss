@@ -1,0 +1,159 @@
+@import 'Styles';
+
+.table-component {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+
+  .loader-component {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include square-box-shadow;
+    background: $color-blue1;
+
+    .tooltip-component {
+      margin: 6px;
+    }
+
+    .panel-toggle {
+      display: flex;
+      flex: 1;
+      justify-content: flex-start;
+
+      svg {
+        cursor: pointer;
+
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    .table-controls-container {
+      width: 100%;
+      padding: 6px;
+      padding-bottom: 0;
+      margin: 12px 0;
+      margin-top: 0;
+      flex-direction: column;
+      height: 0;
+      display: none;
+      background: #f4f4f4;
+      border: 1px solid transparentize($color: #333, $amount: .7);
+
+      &.open {
+        display: flex;
+        height: auto;
+      }
+
+      .filter-component {
+        label {
+          font-size: 12px;
+        }
+      }
+
+      .filter-btn {
+        background: none;
+        border: none;
+      }
+    }
+
+    .search-input-container {
+      flex: 96% 0 0;
+      box-sizing: border-box;
+      margin: 6px 0;
+      padding-left: .5em;
+      background: #fff;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        fill: $color-blue3;
+        width: .8em;
+        height: .8em;
+      }
+
+      input {
+        box-sizing: border-box;
+        background: none;
+        border: none;
+        height: 100%;
+        width: 100%;
+        display: block;
+        padding: .5em;
+        padding-left: 1em;
+      }
+    }
+
+    .column-headers-container {
+      display: flex;
+      width: 100%;
+  
+      .header {
+        display: flex;
+        flex-wrap: nowrap;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 2px;
+        
+        .text {
+          font-size: 12px;
+        }
+
+        &.sortable {
+          cursor: pointer;
+
+          svg {
+            fill: #333;
+            width: 15px;
+            height: 15px;
+            margin: 0 2px;
+          }
+        }
+  
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .rows-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    @include scroll-bar;
+    flex: 1;
+
+    .row-container {
+      display: flex;
+      &:nth-child(even) {
+        background: #F3F3F3;
+      }
+
+      .cell {
+        display: flex;
+        font-size: 13px;
+        flex: 1;
+        padding: 6px;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

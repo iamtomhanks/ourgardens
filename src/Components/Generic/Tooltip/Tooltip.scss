@@ -1,0 +1,40 @@
+@import 'Styles';
+
+.tooltip-component {
+  z-index: 1;
+  position: relative;
+
+  &:hover {
+    .text {
+      display: block;
+    }
+  }
+
+  .icon {
+    display: block;
+
+    svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .text {
+    font-size: 14px;
+    display: none;
+    position: absolute;
+    background: rgba(51, 51, 51, .95);
+    width: 200px;
+    border: 2px solid white;
+    padding: 6px;
+    border-radius: 4px;
+    z-index: 2;
+    color: #fff;
+    @include square-box-shadow;
+
+    &.left {
+      right: 100%;
+    }
+  }
+}
