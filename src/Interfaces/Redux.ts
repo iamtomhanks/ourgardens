@@ -1,5 +1,5 @@
 // Interfaces
-import { DashboardState } from 'Redux/Reducers/Dashboard';
+import { HomeState } from 'Redux/Reducers/Home';
 import { RequestsState } from 'Redux/Reducers/Requests';
 
 export interface Action {
@@ -9,6 +9,6 @@ export interface Action {
 
 // Store
 export interface AppState {
-  dashboard: DashboardState;
+  dashboard: HomeState;
   requests: RequestsState;
 }

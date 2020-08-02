@@ -1,4 +1,3 @@
-import { createFilterObjects } from './Filters';
 import {
   Colors, getHeatGradient, HeatGradients, GraphColorScheme,
 } from './Colors';
@@ -38,7 +37,6 @@ const saveAs = (uri: string, filename: string) => {
 export {
   saveAs,
   API,
-  createFilterObjects,
   getDiversityHeatScore,
   getHeatGradient,
   Colors,

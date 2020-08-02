@@ -7,50 +7,35 @@ import {
   Route,
 } from 'react-router-dom';
 import { connect, ConnectedProps } from 'react-redux';
-import queryString from 'query-string';
 
 // Styles
 import 'Styles/base.scss';
 
 // Interfaces
-import { AppState } from 'Interfaces/Redux';
+// import { AppState } from 'Interfaces/Redux';
 
 // Components
 import { Home } from 'Components/Home';
+import { Merchants } from 'Components/Merchants';
 
 // Actions
-import * as dashboardActions from 'Redux/Actions/Dashboard';
-
-interface MapStateProps {
-  companyId: number|null;
-}
+import * as homeActions from 'Redux/Actions/Home';
 
 interface MapDispatchProps {
   actions: {
-    setCompanyId(companyId: number): void;
   };
 }
 
 const mapDispatchToProps = (dispatch: Dispatch): MapDispatchProps => ({
   actions: bindActionCreators({
-    ...dashboardActions,
+    ...homeActions,
   }, dispatch),
 });
 
-const mapStateToProps = (state: AppState): MapStateProps => ({
-  companyId: state.dashboard.companyId,
-});
-
-const connector = connect(mapStateToProps, mapDispatchToProps);
+const connector = connect(null, mapDispatchToProps);
 type ReduxProps = ConnectedProps<typeof connector>;
 
 class App extends React.Component<ReduxProps, {}> {
-  componentDidMount(): void {
-    const { CompanyID } = queryString.parse(window.location.search);
-
-    this.props.actions.setCompanyId(parseInt(CompanyID as string, 10));
-  }
-
   render(): JSX.Element {
     return (
       <>
@@ -58,6 +43,7 @@ class App extends React.Component<ReduxProps, {}> {
         <Router>
           <Switch>
             <Route path="/" component={Home} />
+            <Route path="/merchants" component={Merchants} />
           </Switch>
         </Router>
       </>

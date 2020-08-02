@@ -2,34 +2,22 @@
 import { Action } from 'Interfaces/Redux';
 import {
   RequestStatus,
-  RequestState,
-  initRequestState,
-  APIRoute,
+  // RequestState,
+  // initRequestState,
+  // APIRoute,
 } from 'Interfaces/Requests';
 
 export interface RequestsState {
-  getStateNodes: RequestState;
-  getStages: RequestState;
-  getDashboard: RequestState;
-  getCategoryLine: RequestState;
-  getJobList: RequestState;
+  // getStateNodes: RequestState;
 }
 
 const initialState: RequestsState = {
-  getStateNodes: Object.assign(initRequestState, {}),
-  getStages: Object.assign(initRequestState, {}),
-  getDashboard: Object.assign(initRequestState, {}),
-  getCategoryLine: Object.assign(initRequestState, {}),
-  getJobList: Object.assign(initRequestState, {}),
+  // getStateNodes: Object.assign(initRequestState, {}),
 };
 
 // use this to dynamically create reducers for each request state for each request
 const propActionMap: {[key: string]: string} = {
-  getStateNodes: APIRoute.GET_STATE_NODES,
-  getStages: APIRoute.GET_STAGES,
-  getDashboard: APIRoute.GET_DASHBOARD,
-  getCategoryLine: APIRoute.GET_CATEGORY_LINE,
-  getJobList: APIRoute.GET_JOB_LIST,
+  // getStateNodes: APIRoute.GET_STATE_NODES,
 };
 
 const requestsReducer = (

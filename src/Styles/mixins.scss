@@ -18,8 +18,7 @@
   }
 }
 
-@mixin dashboard-card {
-  background: $color-blue2;
+@mixin card {
   border-radius: 4px;
   box-sizing: border-box;
   @include square-box-shadow();

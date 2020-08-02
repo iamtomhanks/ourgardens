@@ -2,10 +2,10 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import { dashboardReducer as dashboard } from './Dashboard';
+import { homeReducer as home } from './Home';
 import { requestsReducer as requests } from './Requests';
 
 export default combineReducers({
-  dashboard,
+  home,
   requests,
 });
